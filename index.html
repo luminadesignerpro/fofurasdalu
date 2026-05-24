@@ -404,6 +404,9 @@
     .insta-grid { grid-template-columns: repeat(2,1fr); }
   }
 </style>
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
 </head>
 <body>
 
@@ -506,381 +509,8 @@
     <button class="filter-btn" onclick="filterProducts('kits',this)">Kits</button>
   </div>
   <div class="products-grid" id="productsGrid">
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p12.jpg" alt="Laço Renda Mostarda">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:12,name:'Laço Renda Mostarda',price:12.00,img:'img/p12.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Renda Mostarda</div>
-        <div class="product-desc">Laço em renda mostarda com miolo de pérolas, strass e delicadas florzinhas.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:12,name:'Laço Renda Mostarda',price:12.00,img:'img/p12.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="tiaras">
-      <div class="product-img-wrap">
-        <img src="img/p13.jpg" alt="Faixinha Flores Pêssego">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:13,name:'Faixinha Flores Pêssego',price:12.00,img:'img/p13.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Tiaras</div>
-        <div class="product-name">Faixinha Flores Pêssego</div>
-        <div class="product-desc">Faixa elástica macia com aplicação de florzinhas pêssego/salmão e pérolas.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:13,name:'Faixinha Flores Pêssego',price:12.00,img:'img/p13.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p14.jpg" alt="Laço Renda Lilás">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:14,name:'Laço Renda Lilás',price:12.00,img:'img/p14.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Renda Lilás</div>
-        <div class="product-desc">Laço em renda lilás com detalhes em pérolas espalhadas, strass e flor.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:14,name:'Laço Renda Lilás',price:12.00,img:'img/p14.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p15.jpg" alt="Laço Lilás Brilho">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:15,name:'Laço Lilás Brilho',price:12.00,img:'img/p15.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Lilás Brilho</div>
-        <div class="product-desc">Laço lilás com fios holográficos e florzinha central. Lindo e delicado.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:15,name:'Laço Lilás Brilho',price:12.00,img:'img/p15.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p16.jpg" alt="Laço Amarelo Brilho">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:16,name:'Laço Amarelo Brilho',price:12.00,img:'img/p16.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Amarelo Brilho</div>
-        <div class="product-desc">Laço amarelo com fios holográficos e florzinha central com pérola.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:16,name:'Laço Amarelo Brilho',price:12.00,img:'img/p16.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p17.jpg" alt="Laço Renda Amarelo Claro">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:17,name:'Laço Renda Amarelo Claro',price:12.00,img:'img/p17.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Renda Amarelo Claro</div>
-        <div class="product-desc">Laço delicado em renda amarela clara com aplique de flor e centro trabalhado em strass e pérolas.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 12,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:17,name:'Laço Renda Amarelo Claro',price:12.00,img:'img/p17.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p18.jpg" alt="Laço Boutique Nude">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:18,name:'Laço Boutique Nude',price:13.00,img:'img/p18.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Boutique Nude</div>
-        <div class="product-desc">Laço modelo boutique em fita de gorgurão nude com centro brilhante em strass.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:18,name:'Laço Boutique Nude',price:13.00,img:'img/p18.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p19.jpg" alt="Laço Boutique Azul Royal">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:19,name:'Laço Boutique Azul Royal',price:13.00,img:'img/p19.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Boutique Azul Royal</div>
-        <div class="product-desc">Laço majestoso azul royal em gorgurão duplo, finalizado com centro de pedrarias e strass.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:19,name:'Laço Boutique Azul Royal',price:13.00,img:'img/p19.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p20.jpg" alt="Laço Boutique Amarelo">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:20,name:'Laço Boutique Amarelo',price:13.00,img:'img/p20.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Boutique Amarelo</div>
-        <div class="product-desc">Laço amarelo vibrante, perfeito para alegrar o look! Centro encrustado de strass.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:20,name:'Laço Boutique Amarelo',price:13.00,img:'img/p20.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p21.jpg" alt="Laço Boutique Verde">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:21,name:'Laço Boutique Verde',price:13.00,img:'img/p21.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Boutique Verde</div>
-        <div class="product-desc">Lindo laço volumoso verde bandeira com miolo de strass. Super estiloso!</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:21,name:'Laço Boutique Verde',price:13.00,img:'img/p21.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p22.jpg" alt="Par de Laços Brasil">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:22,name:'Par de Laços Brasil',price:13.00,img:'img/p22.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Par de Laços Brasil</div>
-        <div class="product-desc">Kit especial com 2 laços redondos pompom com fitas nas cores do Brasil (Verde, Amarelo, Azul, Branco).</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:22,name:'Par de Laços Brasil',price:13.00,img:'img/p22.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p23.jpg" alt="Par de Laços Amarelo Brilho">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:23,name:'Par de Laços Amarelo Brilho',price:13.00,img:'img/p23.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Par de Laços Amarelo Brilho</div>
-        <div class="product-desc">Parzinho de laços amarelos com fios holográficos e florzinha central. Ideal para penteados divertidos.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:23,name:'Par de Laços Amarelo Brilho',price:13.00,img:'img/p23.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p24.jpg" alt="Par de Laços Lilás Brilho">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:24,name:'Par de Laços Lilás Brilho',price:13.00,img:'img/p24.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Par de Laços Lilás Brilho</div>
-        <div class="product-desc">Lindo parzinho lilás holográfico com florzinha e pérola. Perfeito para chiquinhas!</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 13,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:24,name:'Par de Laços Lilás Brilho',price:13.00,img:'img/p24.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p25.jpg" alt="Laço Luxo Azul e Rosa com Pompom">
-        <span class="product-tag-badge">Luxo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:25,name:'Laço Luxo Azul e Rosa',price:14.00,img:'img/p25.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Luxo Azul e Rosa</div>
-        <div class="product-desc">Laço espetacular bicolor holográfico (azul/rosa), com detalhes de florzinhas, strass, e pingentes de pompom.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 14,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:25,name:'Laço Luxo Azul e Rosa',price:14.00,img:'img/p25.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p26.jpg" alt="Laço Branco Brilho Luxo">
-        <span class="product-tag-badge">Luxo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:26,name:'Laço Branco Brilho Luxo',price:14.00,img:'img/p26.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Branco Brilho Luxo</div>
-        <div class="product-desc">Laço em fita holográfica branca incrível! Detalhado com raminho de flores brancas e pérolas. Sofisticado e lindo.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 14,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:26,name:'Laço Branco Brilho Luxo',price:14.00,img:'img/p26.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="tiaras">
-      <div class="product-img-wrap">
-        <img src="img/p27.jpg" alt="Tiara Amarela Flores e Tule">
-        <span class="product-tag-badge">Luxo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:27,name:'Tiara Amarela Flores e Tule',price:14.00,img:'img/p27.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Tiaras</div>
-        <div class="product-name">Tiara Amarela Flores e Tule</div>
-        <div class="product-desc">Tiara dentinho (não machuca), decorada com flores brancas e amarelas. Coroada por um laço vibrante em tule.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 14,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:27,name:'Tiara Amarela Flores e Tule',price:14.00,img:'img/p27.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="lacos">
-      <div class="product-img-wrap">
-        <img src="img/p28.jpg" alt="Laço Brasil Luxo com Strass">
-        <span class="product-tag-badge">Destaque</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:28,name:'Laço Brasil Luxo',price:15.00,img:'img/p28.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Laços</div>
-        <div class="product-name">Laço Brasil Luxo</div>
-        <div class="product-desc">Laço boutique duplo com fitas nas cores do Brasil (verde, amarelo, azul, branco) e centro luxuoso em strass e pérolas.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 15,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:28,name:'Laço Brasil Luxo',price:15.00,img:'img/p28.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p29.jpg" alt="Kit Tiara + Laço Verde e Amarelo">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:29,name:'Kit Tiara + Laço Verde e Amarelo',price:15.00,img:'img/p29.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Kit Tiara + Laço Verde e Amarelo</div>
-        <div class="product-desc">Kit especial: tiara trançada nas cores verde e amarelo + laço boutique verde e dourado com strass. Perfeito para datas comemorativas!</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 15,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:29,name:'Kit Tiara + Laço Verde e Amarelo',price:15.00,img:'img/p29.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p30.jpg" alt="Par de Laços Brasil com Flores">
-        <span class="product-tag-badge">Novo</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:30,name:'Par de Laços Brasil com Flores',price:11.00,img:'img/p30.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Par de Laços Brasil com Flores</div>
-        <div class="product-desc">Parzinho de laços nas cores do Brasil (verde e amarelo) com florzinhas azuis e amarelas e pérola central.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 11,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:30,name:'Par de Laços Brasil com Flores',price:11.00,img:'img/p30.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p31.jpg" alt="Kit 2 Faixinhas Tons Terrosos">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:31,name:'Kit 2 Faixinhas Tons Terrosos',price:25.00,img:'img/p31.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Kit 2 Faixinhas Tons Terrosos</div>
-        <div class="product-desc">Kit com 2 faixinhas elásticas nude com laços em fita grosgrain nos tons terrosos. Escolha 2 cores: terracota, nude ou sage.</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 25,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:31,name:'Kit 2 Faixinhas Tons Terrosos',price:25.00,img:'img/p31.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p32.jpg" alt="Kit 3 Faixinhas Tons Terrosos">
-        <span class="product-tag-badge">Mais Vendido</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:32,name:'Kit 3 Faixinhas Tons Terrosos',price:30.00,img:'img/p32.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Kit 3 Faixinhas Tons Terrosos</div>
-        <div class="product-desc">Kit completo com 3 faixinhas elásticas nude com laços grosgrain: terracota, nude e sage. Combinação perfeita e sofisticada!</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 30,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:32,name:'Kit 3 Faixinhas Tons Terrosos',price:30.00,img:'img/p32.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card reveal" data-cat="kits">
-      <div class="product-img-wrap">
-        <img src="img/p33.jpg" alt="Kit 3 Faixinhas Pastel">
-        <span class="product-tag-badge">Kit</span>
-        <div class="product-overlay"><button class="quick-add" onclick="addToCart({id:33,name:'Kit 3 Faixinhas Pastel',price:35.00,img:'img/p33.jpg'})">Adicionar</button></div>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">Kits</div>
-        <div class="product-name">Kit 3 Faixinhas Pastel</div>
-        <div class="product-desc">Kit encantador com 3 faixinhas elásticas com laços brilhantes e florzinhas: rosa, lilás e amarela. Perfeito para combinar com qualquer look!</div>
-        <div class="product-bottom">
-          <span class="product-price">R$ 35,00</span>
-          <button class="add-cart-btn" onclick="addToCart({id:33,name:'Kit 3 Faixinhas Pastel',price:35.00,img:'img/p33.jpg'})">+</button>
-        </div>
-      </div>
-    </div>
-
+    <!-- Produtos carregados dinamicamente via Supabase (veja script no final) -->
+    <div style="text-align: center; grid-column: 1 / -1; padding: 40px; color: var(--ink-2);">Carregando produtos...</div>
   </div>
 </section>
 
@@ -1089,6 +719,56 @@
     btn.classList.add('active');
     document.querySelectorAll('.product-card').forEach(c=>c.style.display=(cat==='todos'||c.dataset.cat===cat)?'block':'none');
   }
+
+  // --- Supabase Products Fetch ---
+  async function loadProductsFromSupabase() {
+    const { data: produtos, error } = await supabase
+      .from('produtos')
+      .select('*')
+      .order('id', { ascending: false });
+
+    if (error) {
+      console.error('Erro ao buscar produtos:', error);
+      document.getElementById('productsGrid').innerHTML = '<p style="text-align:center;width:100%;">Não foi possível carregar os produtos no momento.</p>';
+      return;
+    }
+
+    const grid = document.getElementById('productsGrid');
+    
+    if (produtos.length === 0) {
+      grid.innerHTML = '<p style="text-align:center;width:100%;">Nenhum produto cadastrado ainda.</p>';
+      return;
+    }
+
+    grid.innerHTML = produtos.map(prod => {
+      const priceStr = parseFloat(prod.price).toFixed(2).replace('.', ',');
+      const badgeHtml = prod.badge ? `<span class="product-tag-badge">${prod.badge}</span>` : '';
+      
+      return `
+      <div class="product-card reveal visible" data-cat="${prod.category || 'lacos'}">
+        <div class="product-img-wrap">
+          <img src="${prod.image_url}" alt="${prod.name}">
+          ${badgeHtml}
+          <div class="product-overlay">
+            <button class="quick-add" onclick="addToCart({id:${prod.id},name:'${prod.name}',price:${prod.price},img:'${prod.image_url}'})">Adicionar</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-cat">${prod.category || 'Laços'}</div>
+          <div class="product-name">${prod.name}</div>
+          <div class="product-desc">${prod.description}</div>
+          <div class="product-bottom">
+            <span class="product-price">R$ ${priceStr}</span>
+            <button class="add-cart-btn" onclick="addToCart({id:${prod.id},name:'${prod.name}',price:${prod.price},img:'${prod.image_url}'})">+</button>
+          </div>
+        </div>
+      </div>
+      `;
+    }).join('');
+  }
+
+  // Chamar ao carregar a página
+  window.addEventListener('DOMContentLoaded', loadProductsFromSupabase);
 </script>
 </body>
 </html>
