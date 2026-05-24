@@ -9,7 +9,7 @@ const formTitle = document.getElementById('formTitle');
 
 // Verifica se já está logado ao abrir a página
 async function checkAuth() {
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { session } } = await supabaseClient.auth.getSession();
   if (session) {
     showAdminPanel();
   } else {
@@ -23,13 +23,17 @@ loginForm.addEventListener('submit', async (e) => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  const { data, error } = await supabase.auth.signInWithPassword({
+  document.querySelector('#loginForm .btn').innerText = 'Entrando...';
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
     email,
     password
   });
 
+  document.querySelector('#loginForm .btn').innerText = 'Entrar';
+
   if (error) {
-    showToast('Erro ao logar: ' + error.message);
+    showToast('❌ Erro: ' + error.message);
   } else {
     showAdminPanel();
   }
@@ -37,7 +41,7 @@ loginForm.addEventListener('submit', async (e) => {
 
 // Logout
 async function logout() {
-  await supabase.auth.signOut();
+  await supabaseClient.auth.signOut();
   showLoginScreen();
 }
 
@@ -59,30 +63,34 @@ function showToast(msg) {
   toastMsg.style.display = 'block';
   setTimeout(() => {
     toastMsg.style.display = 'none';
-  }, 3000);
+  }, 4000);
 }
 
 // ----- CRUD DE PRODUTOS -----
 
 // Carregar Produtos
 async function loadProducts() {
-  const { data: produtos, error } = await supabase
+  const { data: produtos, error } = await supabaseClient
     .from('produtos')
     .select('*')
     .order('id', { ascending: false });
 
   if (error) {
-    showToast('Erro ao carregar produtos');
+    showToast('Erro ao carregar produtos: ' + error.message);
     return;
   }
 
   productsTableBody.innerHTML = '';
+  if (!produtos || produtos.length === 0) {
+    productsTableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:20px;">Nenhum produto cadastrado ainda.</td></tr>';
+    return;
+  }
   produtos.forEach(prod => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><img src="${prod.image_url}" class="prod-img-preview"></td>
+      <td><img src="${prod.image_url}" class="prod-img-preview" onerror="this.style.display='none'"></td>
       <td>${prod.name}</td>
-      <td>R$ ${parseFloat(prod.price).toFixed(2)}</td>
+      <td>R$ ${parseFloat(prod.price).toFixed(2).replace('.', ',')}</td>
       <td>${prod.category}</td>
       <td class="actions-btn">
         <button class="btn-edit" onclick="editProduct(${prod.id})">Editar</button>
@@ -112,20 +120,19 @@ productForm.addEventListener('submit', async (e) => {
   // Fazer upload da imagem se tiver selecionado uma nova
   if (imgFile) {
     const fileExt = imgFile.name.split('.').pop();
-    const fileName = `${Math.random()}.${fileExt}`;
-    const filePath = `${fileName}`;
+    const fileName = `${Date.now()}.${fileExt}`;
 
-    const { error: uploadError } = await supabase.storage
+    const { error: uploadError } = await supabaseClient.storage
       .from('imagens_produtos')
-      .upload(filePath, imgFile);
+      .upload(fileName, imgFile);
 
     if (uploadError) {
-      showToast('Erro ao fazer upload da imagem.');
+      showToast('Erro ao fazer upload da imagem: ' + uploadError.message);
       document.getElementById('saveBtn').innerText = 'Salvar Produto';
       return;
     }
 
-    const { data } = supabase.storage.from('imagens_produtos').getPublicUrl(filePath);
+    const { data } = supabaseClient.storage.from('imagens_produtos').getPublicUrl(fileName);
     imageUrl = data.publicUrl;
   }
 
@@ -144,17 +151,15 @@ productForm.addEventListener('submit', async (e) => {
 
   if (id) {
     // Editar
-    const { error } = await supabase.from('produtos').update(productData).eq('id', id);
-    if (error) showToast('Erro ao atualizar!');
-    else showToast('Produto atualizado com sucesso!');
+    const { error } = await supabaseClient.from('produtos').update(productData).eq('id', id);
+    if (error) showToast('Erro ao atualizar: ' + error.message);
+    else showToast('✅ Produto atualizado com sucesso!');
   } else {
     // Criar novo
-    // Se não selecionou imagem no novo, usa um placeholder (opcional)
-    if(!imageUrl) productData.image_url = 'img/p1.jpg'; // fallback para teste se a pessoa esquecer
-    
-    const { error } = await supabase.from('produtos').insert([productData]);
-    if (error) showToast('Erro ao criar!');
-    else showToast('Produto criado com sucesso!');
+    if (!imageUrl) productData.image_url = 'img/p1.jpg';
+    const { error } = await supabaseClient.from('produtos').insert([productData]);
+    if (error) showToast('Erro ao criar: ' + error.message);
+    else showToast('✅ Produto criado com sucesso!');
   }
 
   resetForm();
@@ -163,7 +168,7 @@ productForm.addEventListener('submit', async (e) => {
 
 // Editar
 window.editProduct = async (id) => {
-  const { data, error } = await supabase.from('produtos').select('*').eq('id', id).single();
+  const { data, error } = await supabaseClient.from('produtos').select('*').eq('id', id).single();
   if (data) {
     formTitle.innerText = 'Editar Produto';
     document.getElementById('prodId').value = data.id;
@@ -172,16 +177,16 @@ window.editProduct = async (id) => {
     document.getElementById('prodCat').value = data.category;
     document.getElementById('prodBadge').value = data.badge || '';
     document.getElementById('prodDesc').value = data.description;
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 };
 
 // Excluir
 window.deleteProduct = async (id) => {
   if (confirm('Tem certeza que deseja excluir este produto?')) {
-    const { error } = await supabase.from('produtos').delete().eq('id', id);
+    const { error } = await supabaseClient.from('produtos').delete().eq('id', id);
     if (error) {
-      showToast('Erro ao excluir');
+      showToast('Erro ao excluir: ' + error.message);
     } else {
       showToast('Produto excluído');
       loadProducts();
