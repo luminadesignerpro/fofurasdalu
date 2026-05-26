@@ -18,19 +18,19 @@ body {
   color: var(--ink); 
   display: flex; 
   flex-direction: column; 
-  min-height: 100vh; 
+  min-height: 100dvh; 
 }
 
-/* Stunning Login Container */
 .login-container { 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center; 
-  height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
   position: relative;
   overflow: hidden;
+  padding: 20px;
 }
 
 .login-container::before {
