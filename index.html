@@ -289,7 +289,7 @@
   .about-content .section-header { text-align: left; margin-bottom: 28px; }
   .about-content .section-header .section-divider { margin: 20px 0 0; }
   .about-text { font-size: 15px; line-height: 1.9; color: var(--ink-2); margin-bottom: 20px; font-weight: 300; }
-  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+  .about-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 36px; }
   .highlight-item { padding: 20px; background: var(--white); border-radius: 8px; border-left: 3px solid var(--rose); }
   .highlight-item .h-icon { font-size: 22px; margin-bottom: 8px; }
   .highlight-item .h-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
@@ -297,7 +297,7 @@
 
   /* HOW IT WORKS */
   .how-section { padding: 96px 8vw; background: var(--white); }
-  .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; max-width: 960px; margin: 0 auto; }
+  .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; position: relative; max-width: 960px; margin: 0 auto; }
   .steps-grid::before { content: ''; position: absolute; top: 40px; left: 10%; width: 80%; height: 1px; background: linear-gradient(90deg,transparent,var(--rose),var(--gold),var(--rose),transparent); z-index: 0; }
   .step { text-align: center; padding: 0 24px; position: relative; z-index: 1; }
   .step-num { width: 80px; height: 80px; border-radius: 50%; background: var(--rose-light); border: 2px solid var(--rose); font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--rose-deep); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; transition: background 0.3s, transform 0.3s; }
@@ -440,12 +440,10 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="marquee-track">
-    <span>Frete grátis acima de R$ 150</span>
     <span>Feito com amor e dedicação</span>
     <span>Laços artesanais exclusivos</span>
     <span>Entrega para todo o Brasil</span>
     <span>Atendimento via WhatsApp</span>
-    <span>Frete grátis acima de R$ 150</span>
     <span>Feito com amor e dedicação</span>
     <span>Laços artesanais exclusivos</span>
     <span>Entrega para todo o Brasil</span>
@@ -466,7 +464,7 @@
     <li><a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="https://wa.me/5585988412334" target="_blank" class="whatsapp-nav">
+    <a href="https://wa.me/5585986919936" target="_blank" class="whatsapp-nav">
       <svg viewBox="0 0 24 24" width="14" height="14" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.856L0 24l6.29-1.508A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.959 0-3.8-.53-5.38-1.449l-.385-.228-3.736.895.928-3.648-.251-.396A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
       WhatsApp
     </a>
@@ -487,10 +485,10 @@
       <em>histórias</em> de<br>
       <span class="script">amor</span>
     </h1>
-    <p class="hero-sub">Cada laço é feito à mão com amor, fitas premium e detalhes únicos para deixar sua pequena ainda mais especial. Encomende o seu!</p>
+    <p class="hero-sub">Cada laço é feito à mão com amor e detalhes únicos para deixar sua pequena ainda mais especial. Encomende o seu!</p>
     <div class="hero-ctas">
       <a href="#produtos" class="btn-primary">Ver Coleção →</a>
-      <a href="https://wa.me/5585988412334" target="_blank" class="btn-outline">💬 Encomendas</a>
+      <a href="https://wa.me/5585986919936" target="_blank" class="btn-outline">💬 Encomendas</a>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">500+</div><div class="stat-label">Clientes felizes</div></div>
@@ -514,7 +512,6 @@
 <!-- FEATURES -->
 <div class="features-strip">
   <div class="feature-item"><span class="fi-icon">🎀</span><div class="fi-text"><strong>100% Artesanal</strong>Feito à mão com carinho</div></div>
-  <div class="feature-item"><span class="fi-icon">✨</span><div class="fi-text"><strong>Fitas Premium</strong>Materiais de alta qualidade</div></div>
   <div class="feature-item"><span class="fi-icon">🚚</span><div class="fi-text"><strong>Entrega Rápida</strong>Para todo o Brasil</div></div>
   <div class="feature-item"><span class="fi-icon">💬</span><div class="fi-text"><strong>Atendimento</strong>Via WhatsApp</div></div>
   <div class="feature-item"><span class="fi-icon">🎁</span><div class="fi-text"><strong>Embalagem Especial</strong>Presenteie com estilo</div></div>
@@ -552,11 +549,10 @@
       <h2 class="section-title">Feito com <em>amor</em><br>por quem entende</h2>
       <div class="section-divider"></div>
     </div>
-    <p class="about-text">A Fofuras da Lu nasceu do amor de uma mãe que queria ver sua filha sempre linda e bem acessoriada. Cada laço é produzido artesanalmente, com fitas de alta qualidade, detalhes em strass, pérolas e apliques exclusivos.</p>
+    <p class="about-text">Cada laço é produzido artesanalmente, com fitas de alta qualidade, detalhes em strass, pérolas e apliques exclusivos.</p>
     <p class="about-text">Acreditamos que os pequenos detalhes fazem toda a diferença. Por isso, cada peça recebe atenção especial em cada etapa — da escolha das fitas à embalagem final.</p>
     <div class="about-highlights">
       <div class="highlight-item"><div class="h-icon">🎀</div><div class="h-title">100% Artesanal</div><div class="h-desc">Cada laço feito à mão com dedicação</div></div>
-      <div class="highlight-item"><div class="h-icon">✨</div><div class="h-title">Materiais Premium</div><div class="h-desc">Fitas grosgrain, strass e pérolas de qualidade</div></div>
       <div class="highlight-item"><div class="h-icon">📦</div><div class="h-title">Embalagem Especial</div><div class="h-desc">Cada pedido embalado com cuidado</div></div>
       <div class="highlight-item"><div class="h-icon">💝</div><div class="h-title">Personalização</div><div class="h-desc">Cores e modelos sob encomenda</div></div>
     </div>
@@ -567,14 +563,13 @@
 <section class="how-section" id="como-funciona">
   <div class="section-header reveal">
     <span class="section-eyebrow">Como Funciona</span>
-    <h2 class="section-title">Seu pedido em <em>4 passos</em></h2>
+    <h2 class="section-title">Seu pedido em <em>3 passos</em></h2>
     <div class="section-divider"></div>
   </div>
   <div class="steps-grid">
     <div class="step reveal"><div class="step-num">01</div><div class="step-title">Escolha seu laço</div><p class="step-text">Navegue pelo catálogo e escolha o modelo e a cor que mais combina com sua pequena.</p></div>
     <div class="step reveal"><div class="step-num">02</div><div class="step-title">Fale conosco</div><p class="step-text">Adicione ao carrinho e finalize pelo WhatsApp. Tiramos todas as dúvidas por lá!</p></div>
-    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Produção artesanal</div><p class="step-text">Seu laço é produzido com carinho. Prazo de 3 a 5 dias úteis após confirmação.</p></div>
-    <div class="step reveal"><div class="step-num">04</div><div class="step-title">Receba em casa</div><p class="step-text">Enviamos para todo o Brasil com rastreamento. Embalagem especial para presentear!</p></div>
+    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Produção artesanal</div><p class="step-text">Seu laço é produzido com carinho. Prazo de 5 a 7 dias úteis após confirmação.</p></div>
   </div>
 </section>
 
@@ -618,7 +613,7 @@
     <h2 class="section-title">Pronta para encantar<br>sua <em>princesa</em>?</h2>
   </div>
   <p>Entre em contato agora pelo WhatsApp e faça sua encomenda personalizada. Atendimento rápido e com muito carinho! 🎀</p>
-  <a href="https://wa.me/5585988412334?text=Olá!%20Vi%20os%20laços%20da%20Fofuras%20da%20Lu%20e%20gostaria%20de%20fazer%20uma%20encomenda!" target="_blank" class="cta-whatsapp">
+  <a href="https://wa.me/5585986919936?text=Olá!%20Vi%20os%20laços%20da%20Fofuras%20da%20Lu%20e%20gostaria%20de%20fazer%20uma%20encomenda!" target="_blank" class="cta-whatsapp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.856L0 24l6.29-1.508A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.959 0-3.8-.53-5.38-1.449l-.385-.228-3.736.895.928-3.648-.251-.396A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
     Fazer Encomenda Agora
   </a>
@@ -633,7 +628,7 @@
       <p>Laços e tiaras artesanais feitos com amor para deixar sua pequena ainda mais especial.</p>
       <div class="footer-social">
         <a href="https://instagram.com/fofuras_da_lu" target="_blank" class="social-link">📸</a>
-        <a href="https://wa.me/5585988412334" target="_blank" class="social-link">💬</a>
+        <a href="https://wa.me/5585986919936" target="_blank" class="social-link">💬</a>
       </div>
     </div>
     <div class="footer-col">
@@ -651,13 +646,13 @@
         <li><a href="#sobre">Nossa História</a></li>
         <li><a href="#como-funciona">Como Funciona</a></li>
         <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="https://wa.me/5585988412334">Contato</a></li>
+        <li><a href="https://wa.me/5585986919936">Contato</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contato</h4>
       <ul>
-        <li><a href="https://wa.me/5585988412334">📱 (85) 98841-2334</a></li>
+        <li><a href="https://wa.me/5585986919936">📱 (85) 98691-9936</a></li>
         <li><a href="https://instagram.com/fofuras_da_lu">📷 @fofuras_da_lu</a></li>
         <li><a style="color:rgba(253,246,240,0.5);font-size:13px">Seg–Sáb: 9h–18h</a></li>
       </ul>
@@ -744,7 +739,7 @@
     if(!cart.length)return;
     const lines=cart.map(i=>`• ${i.name} x${i.qty} — R$ ${(i.price*i.qty).toFixed(2).replace('.',',')}`).join('%0A');
     const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-    window.open(`https://wa.me/5585988412334?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido:%0A%0A${lines}%0A%0A*Total:%20R$%20${total.toFixed(2).replace('.',',')}*%0A%0APoderia%20me%20ajudar%20a%20finalizar?`,'_blank');
+    window.open(`https://wa.me/5585986919936?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido:%0A%0A${lines}%0A%0A*Total:%20R$%20${total.toFixed(2).replace('.',',')}*%0A%0APoderia%20me%20ajudar%20a%20finalizar?`,'_blank');
   }
   function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
   function filterProducts(cat,btn){
